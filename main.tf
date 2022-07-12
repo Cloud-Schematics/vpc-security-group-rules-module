@@ -13,7 +13,7 @@ module "security_group_rule_map" {
 # Create Rules
 ##############################################################################
 
-resource "ibm_is_security_group_rule" "default_vpc_rule" {
+resource "ibm_is_security_group_rule" "rule" {
   for_each  = module.security_group_rule_map.value
   group     = var.security_group_id
   direction = each.value.direction
